@@ -1,4 +1,3 @@
-// server.js
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
@@ -13,7 +12,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// MongoDB Connection
 const mongoURI = 'mongodb+srv://ivatti2184:IVATTI2184@test.ouhuooi.mongodb.net/?retryWrites=true&w=majority&appName=Test';
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -21,7 +19,6 @@ mongoose.connect(mongoURI, {
 }).then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Routes setup
 app.use('/api/products', productRoutes);
 app.use('/api/carts', cartRoutes);
 app.use('/api/accounts', accountRoutes);

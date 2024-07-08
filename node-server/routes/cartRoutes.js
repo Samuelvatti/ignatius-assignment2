@@ -1,10 +1,7 @@
-// routes/cartRoutes.js
 const express = require('express');
 const router = express.Router();
 const Cart = require('../models/Cart');
 
-// Other endpoints...
-// Example in cartRoutes.js
 router.get('/', async (req, res) => {
     try {
         const cartItems = await Cart.find();
@@ -16,7 +13,6 @@ router.get('/', async (req, res) => {
 });
 
 
-// Update quantity of a cart item
 router.put('/:productName', async (req, res) => {
     try {
         const { productName } = req.params;
@@ -42,7 +38,6 @@ router.put('/:productName', async (req, res) => {
     }
 });
 
-// Delete a cart item
 router.delete('/:productName', async (req, res) => {
     try {
         const { productName } = req.params;
